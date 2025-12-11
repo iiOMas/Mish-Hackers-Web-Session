@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04 - Forms & Inputs</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+        form { 
+            background: #f9f9f9; 
+            padding: 20px; 
+            border: 2px solid #ccc; 
+            border-radius: 10px; 
+            max-width: 500px;
+        }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, select, textarea { 
+            width: 100%; 
+            padding: 8px; 
+            margin-top: 5px; 
+            margin-bottom: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding doesn't break width */
+        }
+        input[type="submit"], input[type="reset"] {
+            width: auto;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            margin-right: 10px;
+        }
+        input[type="reset"] { background-color: #dc3545; }
+        input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 5px; }
+        .inline-group { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>📝 Registration Form Example</h1>
+
+    <!-- Form Start
+         action: Where data goes (e.g., /register)
+         method: How data is sent (POST for secure data)
+         enctype: Needed if uploading files
+    -->
+    <form action="/register" method="POST" enctype="multipart/form-data">
+
+        <!-- 1. Text Input -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your name" required>
+
+        <!-- 2. Email Input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+        <!-- 3. Password Input -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Secret password" required>
+
+        <!-- 4. Number Input -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="99" placeholder="18+">
+
+        <!-- 5. Select Dropdown -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="eg">Egypt 🇪🇬</option>
+            <option value="us">USA 🇺🇸</option>
+            <option value="uk">UK 🇬🇧</option>
+        </select>
+
+        <!-- 6. Radio Buttons (Gender) -->
+        <label>Gender:</label>
+        <div class="inline-group">
+            <input type="radio" id="male" name="gender" value="male" checked>
+            <label for="male" style="display:inline; font-weight:normal;">Male</label>
+            
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female" style="display:inline; font-weight:normal;">Female</label>
+        </div>
+
+        <!-- 7. Checkbox (Interests) -->
+        <label>Interests:</label>
+        <div class="inline-group">
+            <input type="checkbox" id="coding" name="interests" value="coding">
+            <label for="coding" style="display:inline; font-weight:normal;">Coding</label>
+
+            <input type="checkbox" id="design" name="interests" value="design">
+            <label for="design" style="display:inline; font-weight:normal;">Design</label>
+        </div>
+
+        <!-- 8. File Upload -->
+        <label for="profile-pic">Profile Picture:</label>
+        <input type="file" id="profile-pic" name="profile-pic">
+
+        <!-- 9. Textarea -->
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+
+        <!-- 10. Hidden Input (Not visible to user) -->
+        <input type="hidden" name="user_id" value="12345">
+
+        <hr>
+
+        <!-- Buttons -->
+        <!-- Buttons -->
+        <!-- Using <button> allows for richer content (icons, etc) -->
+        <button type="submit">Register Now 🚀</button>
+        <button type="reset" style="background-color:#dc3545;">Clear Form ❌</button>
+
+    </form>
+
+    <!-- GET Method Example (Search) -->
+    <div style="margin-top: 50px;">
+        <h3>🔍 Search (GET Method Example)</h3>
+        <p>Notice how data appears in the URL after clicking Search.</p>
+        <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="Search anything...">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+
+</body>
+</html>
