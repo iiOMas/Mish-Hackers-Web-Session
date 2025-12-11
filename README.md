@@ -1,17 +1,17 @@
 <div align="center">
-  <img src="images/logo.png" alt="Mish Hackers Logo" width="200" />
+  <img src="images/logo.png" alt="Mish Hackers Logo" width="400" />
   <h1>#𝔇𝔢𝔰𝔱𝔯𝔬𝔶 𝔱𝔥𝔢 𝔑𝔬𝔯𝔪𝔞𝔩</h1>
 </div>
 
-## 🧭 محتويات الجلسة (Session Contents)
+## 🧭 Session Content
 
 | 📁 Folder                                   | 📝 Topic           | 📄 Description                            |
 | :------------------------------------------ | :----------------- | :---------------------------------------- |
 | [**01-HTML-Basics**](#01-html-basics)       | **HTML Basics**    | Tags, Elements, Attributes, IDs, Classes. |
 | [**02-HTML-Structure**](#02-html-structure) | **Page Structure** | Head, Body, Meta tags, Scripts.           |
 | [**03-Common-Tags**](#03-common-tags)       | **Common Tags**    | Headings, Paragraphs, Links, Lists, Divs. |
-| [**04-Forms-Inputs**](#04-forms-inputs)     | **Forms & Inputs** | Inputs, Select, Checkbox, GET vs POST.    |
-| [**05-Tables**](#05-tables)                 | **Tables**         | Rows, Cols, Headings, Spanning.           |
+| [**04-Tables**](#04-tables)                 | **Tables**         | Rows, Cols, Headings, Spanning.           |
+| [**05-Forms-Inputs**](#05-forms-inputs)     | **Forms & Inputs** | Inputs, Select, Checkbox, GET vs POST.    |
 
 ---
 
@@ -497,7 +497,207 @@ Go to folder `03-Common-Tags` to see the code in action!
 
 ---
 
-# 04-Forms-Inputs
+# 04-Tables
+
+## 🟦 **Complete Guide — Tables**
+
+### 1️⃣ What is a Table?
+
+الـ Table عبارة عن بيانات معمولة في صفوف Rows و أعمدة Columns.
+
+**العناصر الأساسية:**
+
+- `<table>` → بيحدد إن عندي جدول.
+- `<tr>` → Table Row → صف.
+- `<td>` → Table Data → خلية عادية في الصف.
+
+**Example:**
+
+```html
+<table>
+  <tr>
+    <td>15</td>
+    <td>30</td>
+    <td>45</td>
+  </tr>
+  <tr>
+    <td>60</td>
+    <td>90</td>
+    <td>120</td>
+  </tr>
+</table>
+```
+
+**Output:**
+
+<table>
+  <tr>
+    <td>15</td>
+    <td>30</td>
+    <td>45</td>
+  </tr>
+  <tr>
+    <td>60</td>
+    <td>90</td>
+    <td>120</td>
+  </tr>
+</table>
+
+### 2️⃣ Table Headings `<th>`
+
+لما تحب تعمل عنوان للعمود أو الصف، بتستخدم `<th>` بدل `<td>`.
+
+**Example:**
+
+```html
+<table>
+  <tr>
+    <th scope="col">Saturday</th>
+    <th scope="col">Sunday</th>
+  </tr>
+  <tr>
+    <th scope="row">Tickets Sold</th>
+    <td>120</td>
+    <td>135</td>
+  </tr>
+</table>
+```
+
+**Output:**
+
+<table>
+  <tr>
+    <th scope="col">Saturday</th>
+    <th scope="col">Sunday</th>
+  </tr>
+  <tr>
+    <th scope="row">Tickets Sold</th>
+    <td>120</td>
+    <td>135</td>
+  </tr>
+</table>
+
+**ليه scope مهم؟**
+
+- `scope="col"` → عنوان لعمود
+- `scope="row"` → عنوان لصف
+- ➜ يساعد الـ screen readers (accessibility).
+
+### 3️⃣ Spanning Columns – colspan
+
+لو عايز خلية تمتد على أكتر من عمود:
+
+```html
+<td colspan="2">Geography</td>
+```
+
+**Output:**
+
+<table>
+  <tr>
+    <td>Math</td>
+    <td colspan="2" style="background-color:#e0e0e0; text-align:center;">Geography (colspan=2)</td>
+    <td>Physics</td>
+  </tr>
+  <tr>
+    <td>80</td>
+    <td>90</td>
+    <td>85</td>
+    <td>92</td>
+  </tr>
+</table>
+
+### 4️⃣ Spanning Rows – rowspan
+
+لو خلية تمتد على أكتر من صف:
+
+```html
+<td rowspan="2">Movie</td>
+```
+
+**Output:**
+
+<table>
+  <tr>
+    <td rowspan="2" style="background-color:#e0e0e0; vertical-align:middle;">Movie (rowspan=2)</td>
+    <td>Inception</td>
+  </tr>
+  <tr>
+    <td>Interstellar</td>
+  </tr>
+</table>
+
+### 5️⃣ Long Tables
+
+في الجداول الكبيرة، بنقسم الجدول 3 أجزاء:
+
+1.  `<thead>` → عناوين الجدول
+2.  `<tbody>` → بيانات الجدول الأساسية
+3.  `<tfoot>` → إجمالي / ملاحظات / نهاية الجدول
+
+**Example:**
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Income</th>
+      <th>Expenditure</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>18th January</td>
+      <td>212</td>
+      <td>39</td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td>Total</td>
+      <td>7824</td>
+      <td>1241</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+**Output:**
+
+<table>
+  <thead>
+    <tr style="background-color:#f0f0f0;">
+      <th>Date</th>
+      <th>Income</th>
+      <th>Expenditure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>18th January</td>
+      <td>212</td>
+      <td>39</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr style="font-weight:bold;">
+      <td>Total</td>
+      <td>7824</td>
+      <td>1241</td>
+    </tr>
+  </tfoot>
+</table>
+
+### 📂 Practical Example
+
+Go to folder `05-Tables` to see the code in action!
+
+---
+
+# 05-Forms-Inputs
 
 <div align="center">
   <img src="images/forms-intro.png" alt="Forms Basics" width="700" />
@@ -720,220 +920,3 @@ Go to folder `03-Common-Tags` to see the code in action!
 ### 📂 Practical Example
 
 Go to folder `04-Forms-Inputs` to see the code in action!
-
----
-
-# 05-Tables
-
-## 🟦 **Complete Guide — Tables**
-
-### 1️⃣ What is a Table?
-
-الـ Table عبارة عن بيانات معمولة في صفوف Rows و أعمدة Columns.
-
-**العناصر الأساسية:**
-
-- `<table>` → بيحدد إن عندي جدول.
-- `<tr>` → Table Row → صف.
-- `<td>` → Table Data → خلية عادية في الصف.
-
-**Example:**
-
-```html
-<table>
-  <tr>
-    <td>15</td>
-    <td>30</td>
-    <td>45</td>
-  </tr>
-  <tr>
-    <td>60</td>
-    <td>90</td>
-    <td>120</td>
-  </tr>
-</table>
-```
-
-</table>
-```
-
-**Output:**
-
-<table>
-  <tr>
-    <td>15</td>
-    <td>30</td>
-    <td>45</td>
-  </tr>
-  <tr>
-    <td>60</td>
-    <td>90</td>
-    <td>120</td>
-  </tr>
-</table>
-
-### 2️⃣ Table Headings `<th>`
-
-لما تحب تعمل عنوان للعمود أو الصف، بتستخدم `<th>` بدل `<td>`.
-
-**Example:**
-
-```html
-<table>
-  <tr>
-    <th scope="col">Saturday</th>
-    <th scope="col">Sunday</th>
-  </tr>
-  <tr>
-    <th scope="row">Tickets Sold</th>
-    <td>120</td>
-    <td>135</td>
-  </tr>
-</table>
-```
-
-</table>
-```
-
-**Output:**
-
-<table>
-  <tr>
-    <th scope="col">Saturday</th>
-    <th scope="col">Sunday</th>
-  </tr>
-  <tr>
-    <th scope="row">Tickets Sold</th>
-    <td>120</td>
-    <td>135</td>
-  </tr>
-</table>
-
-**ليه scope مهم؟**
-
-- `scope="col"` → عنوان لعمود
-- `scope="row"` → عنوان لصف
-- ➜ يساعد الـ screen readers (accessibility).
-
-### 3️⃣ Spanning Columns – colspan
-
-لو عايز خلية تمتد على أكتر من عمود:
-
-```html
-<td colspan="2">Geography</td>
-```
-
-```html
-<td colspan="2">Geography</td>
-```
-
-**Output:**
-
-<table>
-  <tr>
-    <td>Math</td>
-    <td colspan="2" style="background-color:#e0e0e0; text-align:center;">Geography (colspan=2)</td>
-    <td>Physics</td>
-  </tr>
-  <tr>
-    <td>80</td>
-    <td>90</td>
-    <td>85</td>
-    <td>92</td>
-  </tr>
-</table>
-
-### 4️⃣ Spanning Rows – rowspan
-
-لو خلية تمتد على أكتر من صف:
-
-```html
-<td rowspan="2">Movie</td>
-```
-
-```html
-<td rowspan="2">Movie</td>
-```
-
-**Output:**
-
-<table>
-  <tr>
-    <td rowspan="2" style="background-color:#e0e0e0; vertical-align:middle;">Movie (rowspan=2)</td>
-    <td>Inception</td>
-  </tr>
-  <tr>
-    <td>Interstellar</td>
-  </tr>
-</table>
-
-### 5️⃣ Long Tables
-
-في الجداول الكبيرة، بنقسم الجدول 3 أجزاء:
-
-1.  `<thead>` → عناوين الجدول
-2.  `<tbody>` → بيانات الجدول الأساسية
-3.  `<tfoot>` → إجمالي / ملاحظات / نهاية الجدول
-
-**Example:**
-
-```html
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Income</th>
-      <th>Expenditure</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>18th January</td>
-      <td>212</td>
-      <td>39</td>
-    </tr>
-  </tbody>
-
-  <tfoot>
-    <tr>
-      <td>Total</td>
-      <td>7824</td>
-      <td>1241</td>
-    </tr>
-  </tfoot>
-</table>
-```
-
-</table>
-```
-
-**Output:**
-
-<table>
-  <thead>
-    <tr style="background-color:#f0f0f0;">
-      <th>Date</th>
-      <th>Income</th>
-      <th>Expenditure</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>18th January</td>
-      <td>212</td>
-      <td>39</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr style="font-weight:bold;">
-      <td>Total</td>
-      <td>7824</td>
-      <td>1241</td>
-    </tr>
-  </tfoot>
-</table>
-
-### 📂 Practical Example
-
-Go to folder `05-Tables` to see the code in action!
