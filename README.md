@@ -1,192 +1,130 @@
-# 🌐 Web Development 101: HTML & CSS Session
+# 🌐 Web Development 101
 
-Welcome to your first step into Web Development! This session will cover the absolute basics of how websites are built.
+Welcome! Today we will learn how websites are built.
 
-## 🗺️ Roadmap
+## 🧠 Part 1: The Concepts (Before we code)
 
-1.  **HTML Structure**: The skeleton of a page.
-2.  **Text Formatting**: Headings, paragraphs, and styles.
-3.  **Lists**: Organizing items.
-4.  **Links & Images**: Connecting pages and adding visuals.
-5.  **Basic CSS**: Making it look good.
+Before writing code, we need to understand the **Legos** of the web.
 
----
+### 1️⃣ What is a Tag?
 
-## 🏗️ 01. HTML Structure
+A tag is a command to the browser. It starts with `<` and ends with `>`.
 
-Every HTML page needs a standard "boilerplate" structure.
+- **Example**: `<p>` tells the browser "Start a paragraph here".
 
-### 📝 Code Snippet
+### 2️⃣ What is an Element?
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My First Page</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
-</html>
+An element is the **whole thing**: The opening tag + The content inside + The closing tag.
+
+```
+  Element
+  👇
+<p> Hello World </p>
+ 👆      👆      👆
+Tag    Content  Closing Tag
 ```
 
-### 📂 File to Open
+### 3️⃣ What is an Attribute?
 
-Go to `01-HTML-Structure/index.html` to see this in action.
+Attributes are extra options we put _inside_ the opening tag.
 
-### 🧠 Pop Quiz
-
-<details>
-<summary><strong>Question: Where does the content visible to the user go?</strong> (Click to reveal)</summary>
-<blockquote>
-Inside the <code>&lt;body&gt;</code> tag! Anything in <code>&lt;head&gt;</code> is just information for the browser (like the title).
-</blockquote>
-</details>
+- **Analogy**: If the tag is a "Car", the attribute is the "Color".
+- **Code**: `<p class="big-text">` (Here, `class` is the attribute).
 
 ---
 
-## ✍️ 02. Text Formatting
+## 🏗️ Part 2: The Structure
 
-We use tags to tell the browser how to display text.
+Now let's look at the file `01-HTML-Structure/index.html`.
 
-### Key Tags
+Every file needs a skeleton:
 
-- `<h1>` to `<h6>`: Headings (h1 is the biggest).
-- `<p>`: Paragraphs.
-- `<strong>`: **Bold** text.
-- `<em>`: _Italic_ text.
+1.  **`<!DOCTYPE html>`**: Says "I am a modern website".
+2.  **`<html>`**: The box holding everything.
+3.  **`<head>`**: The **Brain** (Settings, Title). Users don't see this.
+4.  **`<body>`**: The **Body** (Text, Images). Users SEE this.
 
-### 📂 File to Open
-
-Go to `02-Text-Formatting/index.html`.
-
-### 🧠 Pop Quiz
-
-<details>
-<summary><strong>Question: How many levels of headings are there?</strong></summary>
-<blockquote>
-6 levels! From <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important).
-</blockquote>
-</details>
+**🗣️ Ask**: Where would I put my photo? In the head or the body?
 
 ---
 
-## 📝 03. Lists
+## ✍️ Part 3: Text Formatting
 
-There are two main types of lists.
+Open `02-Text-Formatting/index.html`.
 
-### 1. Unordered List (`<ul>`)
+We use tags to change how text looks.
 
-- Uses bullets.
-- Good for shopping lists, features, etc.
+- `<h1>` is a **Headline** (Big and bold).
+- `<p>` is a **Paragraph** (Normal text).
+- `<strong>` makes text **Bold**.
+- `<em>` makes text _Italic_.
 
-### 2. Ordered List (`<ol>`)
-
-- Uses numbers (1, 2, 3...).
-- Good for recipes, instructions, steps.
-
-### 📂 File to Open
-
-Go to `03-Lists/index.html`.
-
-### 🧠 Pop Quiz
-
-<details>
-<summary><strong>Question: Which tag is used for the list ITEMS inside the list?</strong></summary>
-<blockquote>
-The <code>&lt;li&gt;</code> tag (List Item). It goes inside both <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code>.
-</blockquote>
-</details>
+**🗣️ Ask**: If `h1` is the biggest headline, what do you think is the smallest?
 
 ---
 
-## 🔗 04. Links & Images
+## 📝 Part 4: Lists
 
-The web wouldn't be a "web" without links!
+Open `03-Lists/index.html`.
+
+- **Ordered List (`<ol>`)**: Numbered (1, 2, 3). Used for recipes/steps.
+- **Unordered List (`<ul>`)**: Bullet points. Used for features/items.
+- **List Item (`<li>`)**: The actual item inside the list.
+
+---
+
+## 🔗 Part 5: Links & Images
+
+Open `04-Links-and-Images/index.html`.
 
 ### Links (`<a>`)
 
+The "Anchor" tag connects pages.
+
 ```html
-<a href="https://google.com">Go to Google</a>
+<a href="google.com">Click me</a>
 ```
 
-- `href`: Valid "Hypertext Reference" (Where the link goes).
+- **Note**: `href` is an **Attribute**!
 
 ### Images (`<img>`)
 
 ```html
-<img src="photo.jpg" alt="Description of photo" />
+<img src="cat.jpg" alt="A cute cat" />
 ```
 
-- `src`: Source (Where the file is).
-- `alt`: Alternate text (If image fails to load or for screen readers).
-- **Note**: `<img>` does NOT have a closing tag!
+- **Note**: Images don't have a closing tag! They are "Self-Closing".
 
-### 📂 File to Open
-
-Go to `04-Links-and-Images/index.html`.
-
-### 🧠 Pop Quiz
-
-<details>
-<summary><strong>Question: What attribute makes a link open in a new tab?</strong></summary>
-<blockquote>
-<code>target="_blank"</code>
-</blockquote>
-</details>
+**🗣️ Ask**: Why doesn't an image need a closing tag like `</img>`? (Hint: Does it have text inside it?)
 
 ---
 
-## 🎨 05. Basic CSS
+## 🎨 Part 6: Basic CSS
 
-HTML is structure. **CSS is Style.**
+Open `05-Basic-CSS/index.html`.
 
-We can use a separate file called `styles.css` and link it to our HTML.
+HTML is the **Skeleton**. CSS is the **Skin/Clothes**.
 
-### How to Link
-
-```html
-<head>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-```
-
-### CSS Syntax
+We select elements and give them styles:
 
 ```css
-/* Selector */
-h1 {
-  color: blue; /* Property: Value */
-  font-size: 50px;
+/* Selector { Property: Value; } */
+p {
+  color: red;
 }
 ```
 
-### 📂 File to Open
-
-Go to `05-Basic-CSS/index.html` and look at `styles.css`.
-
-### 🧠 Pop Quiz
-
-<details>
-<summary><strong>Question: How do you select an element with `class="box"` in CSS?</strong></summary>
-<blockquote>
-By adding a dot! <code>.box { ... }</code>
-</blockquote>
-</details>
+- **Color**: Text color.
+- **Background-color**: Background color.
+- **Font-size**: How big the text is.
 
 ---
 
-## 🚀 Final Challenge: Build a Profile Card!
+## 🚀 Challenge: Build Your Profile
 
-**Goal**: Create a new file called `my-profile.html` and use everything we learned.
+Create a new file `profile.html`:
 
-**Requirements:**
-
-1.  [ ] An `<h1>` with your name.
-2.  [ ] An `<img>` (your avatar or a placeholder).
-3.  [ ] A short `<p>` bio about yourself.
-4.  [ ] A `<ul>` list of your hobbies.
-5.  [ ] A link `<a>` to your GitHub or LinkedIn.
-6.  [ ] (Bonus) Add some CSS to make it look nice!
-
-Good luck! 🎉
+1.  Add an `<h1>` with your name.
+2.  Add a `<p>` with your job/title.
+3.  Add a `<ul>` of 3 things you like.
+4.  Add an `<a>` link to your favorite website.
