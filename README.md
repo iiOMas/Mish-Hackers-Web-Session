@@ -43,12 +43,14 @@ HTML does the EXACT same thing, but with code.
 
 هو "العنصر الكامل": (البداية + المحتوى + النهاية).
 
-**Visual Breakdown** 👇
+**Structure Breakdown**
 
-```html
-Element ┌───────┐
-<p>Hello</p>
-👆 👆 👆 Tag Content Closing
+```
+Element
+   👇
+ <p> Hello World </p>
+  👆      👆      👆
+  Tag   Content  Closing Tag
 ```
 
 ### Attribute
@@ -120,3 +122,74 @@ input[name="username"] {
 ### 📂 Practical Example
 
 Go to folder `01-HTML-Basics` to see the code in action!
+
+---
+
+# 🟦 **HTML Page Structure — الجزء الثاني**
+
+## 🧠 1️⃣ الهيكل الأساسي لأي صفحة HTML
+
+كل صفحة HTML ليها **هيكل أساسي ثابت**:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <!-- Content goes here -->
+  </body>
+</html>
+```
+
+**Explanation:**
+
+- `<!DOCTYPE html>` → بيقول للمتصفح إن دي صفحة HTML5
+- `<html>` → بداية الصفحة كلها
+- `<head>` → مكان المعلومات اللي مش بتظهر على الصفحة زي العنوان، الروابط للـ CSS أو الـ meta tags
+- `<title>` → عنوان الصفحة اللي بيظهر في التاب بتاع المتصفح
+- `<body>` → كل حاجة المستخدم يشوفها: نصوص، صور، روابط، أزرار…
+
+---
+
+## 2️⃣ أهم العناصر داخل `<head>`
+
+### **meta**
+
+- معلومات عن الصفحة زي الترميز، الوصف، أو الكلمات المفتاحية
+  **مثال:**
+
+```html
+<meta charset="UTF-8" />
+```
+
+- **ليه مهم؟**: عشان المتصفح يفهم الحروف العربي والرموز (Emojis) ويظهرها صح. من غيره الكلام ممكن يبان رموز غريبة. 😵‍💫
+
+```html
+<meta name="description" content="This is my website" />
+```
+
+### **link**
+
+- بيربط الصفحة بـ CSS خارجي
+  **مثال:**
+
+```html
+<link rel="stylesheet" href="style.css" />
+```
+
+### **script**
+
+- لو هتستخدم JavaScript
+  **مثال:**
+
+```html
+<script src="script.js"></script>
+```
+
+---
+
+### 📂 Practical Example
+
+Go to folder `02-HTML-Structure` to see the code in action!
