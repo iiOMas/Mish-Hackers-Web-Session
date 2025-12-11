@@ -8,27 +8,25 @@
         This line tells the HTML file to load styles from 'styles.css'
     -->
     <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        /* INTERNAL CSS: You can also write CSS right here in the <style> tag */
-        h2 {
-            border-bottom: 2px solid orange;
-        }
-    </style>
 </head>
 <body>
     <h1>Introduction to CSS</h1>
     
-    <!-- CLASSES: We give things a 'class' name so we can style them later -->
+    <!-- CLASSES (CSS: .intro-text) -->
     <p class="intro-text">CSS makes our HTML look beautiful!</p>
     
     <h2>Colors and Backgrounds</h2>
     <div class="box">
-        I am a styled box. Check styles.css to see how I got this box shape!
+        I am a styled box. Check styles.css!
     </div>
 
-    <h2>Font Styling</h2>
-    <!-- ID: Unique identifier for just ONE element -->
+    <!-- ID (CSS: #special-text) -->
+    <h2>Font Styling (ID)</h2>
     <p id="special-text">I am special text with a unique ID.</p>
+
+    <!-- NAME Attribute (CSS: input[name="username"]) -->
+    <h2>Input Fields (Name)</h2>
+    <p>Using the 'name' attribute for forms:</p>
+    <input type="text" name="username" placeholder="Enter your username">
 </body>
 </html>

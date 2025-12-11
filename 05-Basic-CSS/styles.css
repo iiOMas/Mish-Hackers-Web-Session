@@ -1,33 +1,41 @@
 /* content of styles.css */
 
-/* Selector: Element Name */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Light gray background */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
+/* Selector: Element Name */
 h1 {
-  color: darkblue;
-  text-align: center;
+    color: darkblue;
+    text-align: center;
 }
 
 /* Selector: Class (starts with .) */
 .intro-text {
-  font-size: 18px;
-  color: #333;
+    font-size: 18px;
+    color: #333;
 }
 
 .box {
-  background-color: white;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px; /* Rounded corners */
-  width: 200px;
-  margin: 20px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+    margin: 20px;
 }
 
 /* Selector: ID (starts with #) */
 #special-text {
-  color: red;
-  font-weight: bold;
+    color: red;
+    font-weight: bold;
+}
+
+/* Selector: Attribute (input[name="..."]) */
+input[name="username"] {
+    padding: 10px;
+    border: 2px solid red; /* As per example notes */
+    border-radius: 5px;
+    width: 200px;
 }

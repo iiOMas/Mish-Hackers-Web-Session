@@ -1,130 +1,219 @@
-# 🌐 Web Development 101
+# HTML Basics — Session Notes
 
-Welcome! Today we will learn how websites are built.
+Welcome! concepts are explained in Arabic/English below.
 
-## 🧠 Part 1: The Concepts (Before we code)
+👉 **Section 1 — What is HTML?**
 
-Before writing code, we need to understand the **Legos** of the web.
+<details>
+<summary><strong>Click to Open</strong></summary>
 
-### 1️⃣ What is a Tag?
+### شرح بسيط
 
-A tag is a command to the browser. It starts with `<` and ends with `>`.
+HTML هي اللغة اللي بنوصف بيها محتوى صفحات الويب:
+عناوين — نصوص — صور — روابط — أقسام…
+هيكل وتنظيم، مش لغة برمجة.
 
-- **Example**: `<p>` tells the browser "Start a paragraph here".
-
-### 2️⃣ What is an Element?
-
-An element is the **whole thing**: The opening tag + The content inside + The closing tag.
-
-```
-  Element
-  👇
-<p> Hello World </p>
- 👆      👆      👆
-Tag    Content  Closing Tag
-```
-
-### 3️⃣ What is an Attribute?
-
-Attributes are extra options we put _inside_ the opening tag.
-
-- **Analogy**: If the tag is a "Car", the attribute is the "Color".
-- **Code**: `<p class="big-text">` (Here, `class` is the attribute).
-
----
-
-## 🏗️ Part 2: The Structure
-
-Now let's look at the file `01-HTML-Structure/index.html`.
-
-Every file needs a skeleton:
-
-1.  **`<!DOCTYPE html>`**: Says "I am a modern website".
-2.  **`<html>`**: The box holding everything.
-3.  **`<head>`**: The **Brain** (Settings, Title). Users don't see this.
-4.  **`<body>`**: The **Body** (Text, Images). Users SEE this.
-
-**🗣️ Ask**: Where would I put my photo? In the head or the body?
-
----
-
-## ✍️ Part 3: Text Formatting
-
-Open `02-Text-Formatting/index.html`.
-
-We use tags to change how text looks.
-
-- `<h1>` is a **Headline** (Big and bold).
-- `<p>` is a **Paragraph** (Normal text).
-- `<strong>` makes text **Bold**.
-- `<em>` makes text _Italic_.
-
-**🗣️ Ask**: If `h1` is the biggest headline, what do you think is the smallest?
-
----
-
-## 📝 Part 4: Lists
-
-Open `03-Lists/index.html`.
-
-- **Ordered List (`<ol>`)**: Numbered (1, 2, 3). Used for recipes/steps.
-- **Unordered List (`<ul>`)**: Bullet points. Used for features/items.
-- **List Item (`<li>`)**: The actual item inside the list.
-
----
-
-## 🔗 Part 5: Links & Images
-
-Open `04-Links-and-Images/index.html`.
-
-### Links (`<a>`)
-
-The "Anchor" tag connects pages.
+### Example
 
 ```html
-<a href="google.com">Click me</a>
+<h1>Hello World</h1>
+<p>This is my first paragraph.</p>
 ```
 
-- **Note**: `href` is an **Attribute**!
+### 📂 File to Open
 
-### Images (`<img>`)
+Go to `01-HTML-Structure/index.html`
 
-```html
-<img src="cat.jpg" alt="A cute cat" />
-```
-
-- **Note**: Images don't have a closing tag! They are "Self-Closing".
-
-**🗣️ Ask**: Why doesn't an image need a closing tag like `</img>`? (Hint: Does it have text inside it?)
+</details>
 
 ---
 
-## 🎨 Part 6: Basic CSS
+👉 **Section 2 — Tag vs Element vs Attribute**
 
-Open `05-Basic-CSS/index.html`.
+<details>
+<summary><strong>Click to Open</strong></summary>
 
-HTML is the **Skeleton**. CSS is the **Skin/Clothes**.
+### 🔹 What is a Tag?
 
-We select elements and give them styles:
+الكلمة اللي بين `< >`
+
+- `<p>` opening tag
+- `</p>` closing tag
+
+### 🔹 What is an Element?
+
+التاج + المحتوى + التاج اللي بيقفل
+
+```html
+<p>Hello</p>
+```
+
+### 🔹 What is an Attribute?
+
+معلومات إضافية جوه التاج
+
+```html
+<img src="img.jpg" alt="Photo" />
+```
+
+### مثال شامل
+
+```html
+<p class="text">Welcome to HTML</p>
+```
+
+- `tag` → p
+- `element` → كل السطر
+- `attribute` → class="text"
+
+### 📂 File to Open
+
+Go to `02-Text-Formatting/index.html` (See tags in action)
+
+</details>
+
+---
+
+👉 **Section 3 — Self-Closing Tags**
+
+<details>
+<summary><strong>Click to Open</strong></summary>
+
+### أمثلة
+
+```html
+<img src="pic.jpg" />
+<br />
+<hr />
+```
+
+- These tags do **not** need a closing tag like `</img>`.
+
+### 📂 File to Open
+
+Go to `04-Links-and-Images/index.html`
+
+</details>
+
+---
+
+👉 **Section 4 — Nesting (التعشيق)**
+
+<details>
+<summary><strong>Click to Open</strong></summary>
+
+### ✔️ صحيح
+
+Tags must close in the reverse order they opened ("Last in, First out").
+
+```html
+<div>
+  <p>Hello</p>
+</div>
+```
+
+### ❌ خطأ
+
+Don't overlap tags!
+
+```html
+<div>
+  <p>Hello
+</div>
+</p>
+```
+
+</details>
+
+---
+
+👉 **Section 5 — id / class / name**
+
+<details>
+<summary><strong>Click to Open</strong></summary>
+
+### 🔹 class
+
+- يتكرر عادي
+- نستخدمه لتجميع عناصر لها نفس التصميم
+- **CSS selector**: `.className`
+
+### 🔹 id
+
+- فريد (مرة واحدة فقط)
+- نستخدمه لاستهداف عنصر معين
+- **CSS selector**: `#idName`
+
+### 🔹 name
+
+- خاص بالـ `input` & `forms`
+- مش معمول للتصميم
+- لكن ممكن أستهدفه في CSS لو احتجت `input[name="x"]`
+- مهم جدًا للـ backend
+
+### HTML Example
+
+```html
+<h1 id="main-title">HTML Session</h1>
+
+<p class="info">Paragraph one</p>
+<p class="info">Paragraph two</p>
+
+<!-- Name attribute example -->
+<input type="text" name="username" placeholder="Enter your name" />
+```
+
+### CSS Example
 
 ```css
-/* Selector { Property: Value; } */
-p {
-  color: red;
+#main-title {
+  color: blue;
+}
+
+.info {
+  color: green;
+}
+
+input[name="username"] {
+  border: 2px solid red;
 }
 ```
 
-- **Color**: Text color.
-- **Background-color**: Background color.
-- **Font-size**: How big the text is.
+### 📂 File to Open
+
+Go to `05-Basic-CSS/index.html`
+
+</details>
 
 ---
 
-## 🚀 Challenge: Build Your Profile
+👉 **Section 6 — Quick Comparison Table**
 
-Create a new file `profile.html`:
+<details>
+<summary><strong>Click to Open</strong></summary>
 
-1.  Add an `<h1>` with your name.
-2.  Add a `<p>` with your job/title.
-3.  Add a `<ul>` of 3 things you like.
-4.  Add an `<a>` link to your favorite website.
+| Property  | Used for       | Repeat? | CSS Selector      |
+| :-------- | :------------- | :------ | :---------------- |
+| **id**    | عنصر واحد محدد | ❌ No   | `#id`             |
+| **class** | مجموعة عناصر   | ✔️ Yes  | `.class`          |
+| **name**  | Forms          | ✔️      | `input[name="x"]` |
+
+</details>
+
+---
+
+👉 **Section 7 — Mini Exercise**
+
+<details>
+<summary><strong>Click to Open</strong></summary>
+
+### Task
+
+اكتب صفحة HTML بسيطة فيها:
+
+1.  عنوان له `id`
+2.  فقرتين لهم `class` واحد
+3.  `input` له `name`
+4.  وطبّق عليهم CSS بسيط
+
+</details>
