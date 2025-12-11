@@ -1,0 +1,18 @@
+/* Simple styles for the basics */
+
+/* ID: Targets the one element with id="main-title" */
+#main-title {
+    color: blue;
+}
+
+/* Class: Targets ALL elements with class="info" */
+.info {
+    color: green;
+    font-size: 18px;
+}
+
+/* Attribute: Targets input ONLY if name="username" */
+input[name="username"] {
+    border: 2px solid red;
+    padding: 10px;
+}
