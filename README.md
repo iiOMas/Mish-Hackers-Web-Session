@@ -19,7 +19,8 @@
 
 ## 🧠 1️⃣ HTML يعني إيه؟
 
-- **HTML** = لغة لوصف محتوى صفحات الويب.
+- **HTML** = HyperText Markup Language
+- **معنى**: لغة لوصف محتوى صفحات الويب.
 - **استخداماتها**: العناوين، النصوص، الروابط، القوائم.
 - **مش لغة برمجة**: دي لغة ترتيب وهيكل.
 
@@ -693,7 +694,7 @@ Go to folder `03-Common-Tags` to see the code in action!
 
 ### 📂 Practical Example
 
-Go to folder `05-Tables` to see the code in action!
+Go to folder `04-Tables` to see the code in action!
 
 ---
 
@@ -919,4 +920,4 @@ Go to folder `05-Tables` to see the code in action!
 
 ### 📂 Practical Example
 
-Go to folder `04-Forms-Inputs` to see the code in action!
+Go to folder `05-Forms-Inputs` to see the code in action!
