@@ -2,38 +2,54 @@
 
 ## 🧠 1️⃣ HTML يعني إيه؟
 
-HTML = لغة لوصف محتوى صفحات الويب
-بنستخدمها للعناوين، النصوص، الروابط، القوائم…
-**مش لغة برمجة**، دي لغة ترتيب وهيكل.
+-\* **HTML** = لغة لوصف محتوى صفحات الويب.
+
+- **استخداماتها**: العناوين، النصوص، الروابط، القوائم.
+- **مش لغة برمجة**: دي لغة ترتيب وهيكل.
+
+### 💡 Analogy: Start with MS Word
+
+Think of HTML like a Word Document.
+When you write in Word, you choose:
+
+- **Big Title** (Heading 1)
+- **Subtitle** (Heading 2)
+- **Paragraph text**
+- **Bold/Italic**
+
+HTML does the EXACT same thing, but with code.
+
+![Word Structure Analogy](images/word-structure.png)
 
 ### Example
 
 ```html
 <h1>Hello World</h1>
-<p>This is my first paragraph.</p>
+{{ ... }}
 ```
 
 ---
 
 ## 2️⃣ Tag / Element / Attribute
 
-### Tag
+### 🔹 Tag
 
-كلمة بين `< >`
+كلمة بتتكتب بين علامات `< >`:
 
-- Open Tag: `<p>`
-- Close Tag: `</p>`
+- **Open Tag**: `<p>` (البداية)
+- **Close Tag**: `</p>` (النهاية)
 
-### Element
+### 🔹 Element
 
-التاج + المحتوى + تاج الإغلاق
-`Element` 👇
+هو "العنصر الكامل": (البداية + المحتوى + النهاية).
+
+**Visual Breakdown** 👇
 
 ```html
-<p>Hello World</p>
+Element ┌───────┐
+<p>Hello</p>
+👆 👆 👆 Tag Content Closing
 ```
-
-`Tag` 👆 `Content` 👆 `Closing` 👆
 
 ### Attribute
 
